@@ -41,3 +41,24 @@ for(const post of posts){
   //console.log(post)
 }
 }
+
+//
+
+function addAPost(){
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'post',
+    body: JSON.stringify({
+      title: 'My new post',
+      body: 'This is my post',
+      userId: 1
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+}
+
+//interview ques:   http get vs post
+//interview ques: crud operation
